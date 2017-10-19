@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {Movie} from './shared/examples';
+import { MoviesService } from './shared/services/movies.service';
 
 
 import { AppComponent } from './app.component';
@@ -44,7 +46,7 @@ const appRoutes: Routes = [
   exports: [
   	LayoutComponent
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent],
   
 })
