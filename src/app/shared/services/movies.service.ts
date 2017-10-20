@@ -31,6 +31,20 @@ export class MoviesService {
 
   }
 
+  search(term) {
+        let movies: Movie [] = [];;
+        return new Observable((o: Observer<any>) => {
+            exampleMovies.forEach(movie => {
+                if (movie.name.match(term)) {
+                    movies.push(movie);
+                }
+            });
+            o.next(movies);
+            o.complete();
+            });
+    }
+
+
 
 
 }

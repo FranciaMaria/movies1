@@ -48,7 +48,7 @@ const appRoutes: Routes = [
 	)
   ],
   exports: [
-  	LayoutComponent
+  	LayoutComponent, SearchComponent
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent],
