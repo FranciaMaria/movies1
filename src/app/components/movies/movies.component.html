@@ -1,3 +1,43 @@
-<p>
-  movies works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Movies</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Movies Table</h2>
+ <!--  <p>The .table-bordered class adds borders to a table:</p>             -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Director</th>
+        <th>Image Url</th>
+        <th>Duration [min]</th>
+        <th>Released Date</th>
+        <th>Genres</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <td>{{movie.id}}</td>
+        <td>{{movie.name}}</td>
+        <td>{{movie.director}}</td>
+        <td>{{movie.imageUrl}}</td>
+        <td>{{movie.duration}}</td>
+        <td>{{movie.releaseDate | date: 'd MMMM yyyy'}}</td>
+        <td>{{movie.genres}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>
+</body>
+</html>

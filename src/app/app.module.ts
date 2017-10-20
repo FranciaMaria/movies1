@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {Movie} from './shared/examples';
+import {exampleMovies} from './shared/examples';
 import { MoviesService } from './shared/services/movies.service';
 
 
