@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieRowComponent } from './shared/components/movie-row/movie-row.component';
+import { SearchComponent } from './search/search/search.component';
 
 const appRoutes: Routes = [
   {
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     AppComponent,
     LayoutComponent,
     MoviesComponent,
-    MovieRowComponent
+    MovieRowComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

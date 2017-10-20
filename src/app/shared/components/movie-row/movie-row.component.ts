@@ -4,7 +4,7 @@ import { Movie } from '../../models/movie.model';
 import { MoviesService } from '../../services/movies.service';
 
 @Component({
-  selector:'[movieRow]',//'app-movie-row',
+  selector:'[movieRow]',
   templateUrl: './movie-row.component.html',
   styleUrls: ['./movie-row.component.css']
 })

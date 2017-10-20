@@ -1,8 +1,4 @@
 
-  <!-- <li class="list-group-item"><a [routerLink]="['/movies', movie.id]">
-         {{ movie.name }}
-    </a>
-  </li> -->
   <li class="list-group-item">ID: {{ movieRow.id }}</li>
   <li class="list-group-item">Name: {{ movieRow.name }}</li>
   <li class="list-group-item">Director: {{ movieRow.director }}</li>
@@ -11,14 +7,3 @@
   <li class="list-group-item">Release Date: {{ movieRow.releaseDate | date: 'd MMMM yyyy'}}</li>
   <li class="list-group-item">Genres: {{ movieRow.genres }}</li>
  
-<!-- <td class="align-middle">
-    <a [routerLink]="['/movies', movie.id]">
-         {{ movieRow.name }}
-    </a>
-</td>
-<td class="align-middle">{{ movieRow.director }}/td>
-<td class="align-middle">{{ movieRow.imageUrl }}/td>
-<td class="align-middle">{{ movieRow.duration }}/td>
-<td class="align-middle">{{ movieRow.movieRow.releaseDate | date: 'd MMMM yyyy' }}/td>
-<td class="align-middle">{{ movieRow.genres }}/td>
- -->
