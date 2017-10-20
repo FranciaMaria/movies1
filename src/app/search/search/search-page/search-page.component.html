@@ -3,5 +3,7 @@
     <p>Search results: {{ term }}</p>
     <hr>
     <!-- <app-movie-row *ngFor="let movie of movies" [movieRow]="movie"></app-movie-row> -->
+    <!-- <app-movie-row class="list-group" *ngFor="let movie of movies " [movieRow]="movie"></app-movie-row> -->
     <app-movie-row class="list-group" *ngFor="let movie of movies" [movieRow]="movie"></app-movie-row>
+    <p *ngIf="movies.length === 0">No Movies Found</p>
 </div>

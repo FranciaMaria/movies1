@@ -1,5 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
+
 import { Movie } from '../../../shared/models/movie.model';
 import { MoviesService } from '../../../shared/services/movies.service';
 
@@ -24,22 +26,9 @@ export class SearchPageComponent implements OnInit {
         this.moviesService.search(term).subscribe(data => {
             this.movies = data;
             this.term = term;
-        });
+        },
+        );
 
     }
-
-    /*ngOnInit() {
-    this.route.params.subscribe(() => {
-      let id = parseInt(this.route.snapshot.paramMap.get('term'));
-
-      this.movies = [];
-      this.moviesService.getMovies()
-        .subscribe((data: any[]) => {
-          this.movies = data.find(item => item['term'] == 'term');
-
-          });
-        });
-  }*/
-
 
 }
