@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { exampleMovies } from '../../shared/examples';
 import { MoviesService } from '../../shared/services/movies.service';
@@ -15,6 +15,8 @@ export class MoviesComponent implements OnInit {
 	private movies: Movie[] = [];
   private movie: any;
   private selected : number = 0;
+  private selectAllSelects: boolean;
+
 
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) { 
 
@@ -37,6 +39,10 @@ export class MoviesComponent implements OnInit {
   deselectMovie(movie) {
     //this.movie = movie;
     this.selected--;
+  }
+
+  selectAll(value) {
+    this.selectAllSelects = value;
   }
 
 }

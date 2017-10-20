@@ -12,8 +12,19 @@ export class MovieRowComponent implements OnInit {
 
   private movie: any;
   private selected: boolean = false;
+  private select: any;
+  private deselect: any;
 
   @Input() movieRow: Movie;
+
+  @Input() set movieSelect(selectInput: boolean) {
+    if (selectInput == true) {
+      this.selectMovie(this.movie);
+    } else 
+    if (selectInput == false) {
+      this.deselectMovie(this.movie);
+    }
+}
 
   @Output() onSelectMovie = new EventEmitter<Movie>();
   @Output() onDeselect = new EventEmitter<Movie>();
@@ -34,3 +45,5 @@ export class MovieRowComponent implements OnInit {
   }
 
 }
+
+
