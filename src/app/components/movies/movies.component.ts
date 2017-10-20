@@ -26,17 +26,7 @@ export class MoviesComponent implements OnInit {
   		this.movies = data;
 	  });
 
-    this.route.params.subscribe(() => {
-      let id = parseInt(this.route.snapshot.paramMap.get('id'));
-
-      this.movie = [];
-      this.moviesService.getMovies()
-        .subscribe((data: any[]) => {
-          this.movie = data.find(item => item['id'] == id);
-
-        });
-      
-      });
+    
 
   }
 

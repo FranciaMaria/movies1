@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {exampleMovies} from './shared/examples';
+import { FormsModule } from '@angular/forms';
+import { exampleMovies } from './shared/examples';
 import { MoviesService } from './shared/services/movies.service';
 
 
@@ -10,6 +11,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieRowComponent } from './shared/components/movie-row/movie-row.component';
 import { SearchComponent } from './search/search/search.component';
+import { SearchPageComponent } from './search/search/search-page/search-page.component';
 
 const appRoutes: Routes = [
   {
@@ -27,10 +29,10 @@ const appRoutes: Routes = [
       }
     ]
   },
- /* {
-    path: 'messages',
-    component: MessagesComponent
-  },*/
+ {
+    path: 'search/:term',
+    component: SearchPageComponent
+  },
 ];
 
 @NgModule({
@@ -39,16 +41,18 @@ const appRoutes: Routes = [
     LayoutComponent,
     MoviesComponent,
     MovieRowComponent,
-    SearchComponent
+    SearchComponent,
+    SearchPageComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     RouterModule.forRoot(
       appRoutes
 	)
   ],
   exports: [
-  	LayoutComponent, SearchComponent
+  	LayoutComponent, SearchComponent, SearchPageComponent, MovieRowComponent
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent],
