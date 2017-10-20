@@ -8,6 +8,7 @@ import { MoviesService } from './shared/services/movies.service';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { MovieRowComponent } from './shared/components/movie-row/movie-row.component';
 
 const appRoutes: Routes = [
   {
@@ -18,12 +19,12 @@ const appRoutes: Routes = [
   {
     path: 'movies',
     component: MoviesComponent,
-    /*children: [
+    children: [
       {
         path: ':id',
-        component: ContactDetailsComponent
+        component: MovieRowComponent
       }
-    ]*/
+    ]
   },
  /* {
     path: 'messages',
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LayoutComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieRowComponent
   ],
   imports: [
     BrowserModule,
