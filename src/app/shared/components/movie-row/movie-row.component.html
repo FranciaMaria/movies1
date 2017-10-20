@@ -1,3 +1,5 @@
+<form #movieForm (onSelectMovie)=selectMovie($event)>
+
 <ul>
   <li class="list-group-item">ID: {{ movieRow.id }}</li>
   <li class="list-group-item">Name: {{ movieRow.name }}</li>
@@ -6,4 +8,11 @@
   <li class="list-group-item">Duration [min]: {{ movieRow.duration }}</li>
   <li class="list-group-item">Release Date: {{ movieRow.releaseDate | date: 'd MMMM yyyy'}}</li>
   <li class="list-group-item">Genres: {{ movieRow.genres }}</li>
+  <!-- <li class="list-group-item"><input type="checkbox" (click)="selectMovie()" ng-class="{'selectMovie': orange}" >Select</li> -->
+  <button (click)="selectMovie(movieRow)" [disabled]="selected">Select</button>
+  <button (click)="deselectMovie(movieRow)" [disabled]="!selected">Deselect</button>
  </ul>
+	<!-- <button (click)="selectMovie()">Select</button> -->
+</form>
+
+

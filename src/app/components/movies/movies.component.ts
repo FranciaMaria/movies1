@@ -13,7 +13,8 @@ export class MoviesComponent implements OnInit {
 
 	//private movies: Array<Object>;
 	private movies: Movie[] = [];
-   private movie: any;
+  private movie: any;
+  private selected : number = 0;
 
   constructor(private route: ActivatedRoute, private moviesService: MoviesService) { 
 
@@ -26,8 +27,16 @@ export class MoviesComponent implements OnInit {
   		this.movies = data;
 	  });
 
-    
+  }
 
+  selectMovie(movie) {
+    //this.movie = movie;
+    this.selected++;
+  }
+
+  deselectMovie(movie) {
+    //this.movie = movie;
+    this.selected--;
   }
 
 }

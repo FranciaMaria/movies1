@@ -40,10 +40,11 @@
     </tbody>
   </table> -->
   <ul>
-  	<app-movie-row class="list-group" *ngFor="let movie of movies" [movieRow]="movie"></app-movie-row>
+  	<app-movie-row class="list-group" *ngFor="let movie of movies" [movieRow]="movie" (selectMovie)="selectMovie($event)" (deselectMovie)="deselectMovie($event)">{{selected}}</app-movie-row>
  </ul>
 </div>
 <router-outlet></router-outlet>
 </body>
 </html>
+
 
